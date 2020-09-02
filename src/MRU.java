@@ -1,13 +1,12 @@
 import java.util.LinkedList;
-import java.util.List;
 
 /**
- * Least Recent Use Cache
+ * Most Recent Use Cache
  */
-public class LRU {
+public class MRU {
     private LinkedList<Integer> cacheList;
     private int capability;
-    public LRU(int capability) {
+    public MRU(int capability) {
         cacheList = new LinkedList<>();
         this.capability = capability;
     }
@@ -17,7 +16,7 @@ public class LRU {
             cacheList.remove((Integer) page);
         else {
             if (cacheList.size() == capability)
-                cacheList.removeLast();
+                cacheList.removeFirst();
         }
         cacheList.addFirst(page);
     }
@@ -31,8 +30,8 @@ public class LRU {
     }
 
     public static void main(String[] args) {
-        LRU cache = new LRU(4);
-        // 1 -> 21 -> 321 -> 4321 -> 1432 -> 5143 -> 4513 -> 7451 -> 1745
+        MRU cache = new MRU(4);
+        // 1 -> 21 -> 321 -> 4321 -> 1432 -> 5432 -> 4532 -> 7532 -> 1532
         cache.refer(1);
         cache.refer(2);
         cache.refer(3);
