@@ -1,5 +1,6 @@
+package cache;
+
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Least Recent Use Cache
