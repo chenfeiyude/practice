@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 /**
  * First In Firt Out Cache
+ * Using this algorithm the cache behaves in the same way as a FIFO queue.
  */
 public class FIFO {
     private LinkedList<Integer> cacheList;

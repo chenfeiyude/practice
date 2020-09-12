@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 /**
  * Most Recent Use Cache
+ * Discards, in contrast to LRU, the most recently used items first.
  */
 public class MRU {
     private LinkedList<Integer> cacheList;
